@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant AI Scanner</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+<div class="app-container">
+    <header>
+        <h1>🌿 Plant ID</h1>
+        <a href="/history" class="btn-history">View History</a>
+    </header>
+
+    <div class="tabs">
+        <button id="tab-upload" class="active" onclick="switchTab('upload')">Upload Photo</button>
+        <button id="tab-webcam" onclick="switchTab('webcam')">Use Camera</button>
+    </div>
+
+    <div id="section-upload" class="mode-section">
+        <div class="upload-box">
+            <input type="file" id="file-input" accept="image/*">
+        </div>
+        <button class="btn-action" onclick="uploadImage()">Identify Plant</button>
+    </div>
+
+    <div id="section-webcam" class="mode-section hidden">
+        <video id="video" autoplay playsinline></video>
+        <button class="btn-action" onclick="captureWebcam()">Capture & Identify</button>
+        <canvas id="canvas" style="display:none;"></canvas>
+    </div>
+
+    <div id="result-container" class="hidden">
+        <h3>Analysis Result</h3>
+        <div class="result-card">
+            <img id="result-img" src="" alt="Scanned Plant">
+            <div class="result-info">
+                <p class="plant-name" id="res-name">Loading...</p>
+                <p class="confidence">Confidence: <span id="res-prob">0</span>%</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/static/js/script.js"></script>
+</body>
+</html>
