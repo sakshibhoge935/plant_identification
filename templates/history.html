@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Scan History</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+<div class="app-container wide">
+    <header>
+        <h1>📜 Scan History</h1>
+        <a href="/" class="btn-history">← Back to Scanner</a>
+    </header>
+
+    <div class="table-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th>Photo</th>
+                    <th>Plant Name</th>
+                    <th>Confidence</th>
+                    <th>Date Scanned</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for plant in plants %}
+                <tr>
+                    <td>
+                        <img src="/static/uploads/{{ plant[1] }}" class="thumb">
+                    </td>
+                    <td class="name-cell">{{ plant[2] }}</td>
+                    <td>
+                        <div class="prob-badge">
+                            {{ "%.1f"|format(plant[3] * 100) }}%
+                        </div>
+                    </td>
+                    <td class="date-cell">{{ plant[4].strftime('%Y-%m-%d %H:%M') }}</td>
+                </tr>
+                {% else %}
+                <tr>
+                    <td colspan="4" style="text-align:center;">No history found. Go scan some plants!</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+</body>
+</html>
