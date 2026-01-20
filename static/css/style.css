@@ -1,0 +1,31 @@
+:root { --primary: #2e7d32; --bg: #e8f5e9; }
+body { font-family: 'Segoe UI', sans-serif; background: var(--bg); margin: 0; padding: 20px; display: flex; justify-content: center; }
+
+.app-container { background: white; width: 100%; max-width: 450px; padding: 25px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+.app-container.wide { max-width: 800px; }
+
+header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+h1 { margin: 0; color: var(--primary); font-size: 1.5rem; }
+
+/* Tabs */
+.tabs { display: flex; gap: 10px; margin-bottom: 20px; }
+.tabs button { flex: 1; padding: 10px; border: none; background: #ddd; border-radius: 6px; cursor: pointer; font-weight: bold; }
+.tabs button.active { background: var(--primary); color: white; }
+
+/* Sections */
+.hidden { display: none; }
+video, #result-img { width: 100%; border-radius: 8px; border: 2px solid #ddd; }
+.btn-action { width: 100%; padding: 12px; background: var(--primary); color: white; border: none; border-radius: 6px; font-size: 1rem; cursor: pointer; margin-top: 10px; }
+.btn-history { text-decoration: none; color: #666; font-size: 0.9rem; border: 1px solid #ccc; padding: 5px 10px; border-radius: 4px; }
+
+/* Result Card */
+.result-card { margin-top: 15px; text-align: left; }
+.plant-name { font-size: 1.2rem; font-weight: bold; color: #333; margin: 10px 0 5px; }
+.confidence { color: #666; margin: 0; }
+
+/* History Table */
+table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+th { text-align: left; color: #666; font-size: 0.9rem; border-bottom: 2px solid #eee; padding: 10px; }
+td { padding: 10px; border-bottom: 1px solid #eee; vertical-align: middle; }
+.thumb { width: 50px; height: 50px; object-fit: cover; border-radius: 4px; }
+.prob-badge { background: #c8e6c9; color: #1b5e20; padding: 4px 8px; border-radius: 12px; font-size: 0.85rem; display: inline-block; }
